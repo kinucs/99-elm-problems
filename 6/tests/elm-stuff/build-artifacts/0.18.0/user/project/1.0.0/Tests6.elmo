@@ -1,0 +1,164 @@
+var _user$project$Tests6$errorNotPolindrom = function (list) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_elm_lang$core$Basics$toString(list),
+		' is not palindrome');
+};
+var _user$project$Tests6$errorPolindrom = function (list) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_elm_lang$core$Basics$toString(list),
+		' is palindrome');
+};
+var _user$project$Tests6$all = A2(
+	_elm_community$elm_test$Test$describe,
+	'Problem 6 tests',
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_community$elm_test$Test$test,
+			'[ 1, 3, 5, 8, 5, 3, 1 ] is palindrome',
+			function (_p0) {
+				var _p1 = _p0;
+				var list = {
+					ctor: '::',
+					_0: 1,
+					_1: {
+						ctor: '::',
+						_0: 3,
+						_1: {
+							ctor: '::',
+							_0: 5,
+							_1: {
+								ctor: '::',
+								_0: 8,
+								_1: {
+									ctor: '::',
+									_0: 5,
+									_1: {
+										ctor: '::',
+										_0: 3,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					}
+				};
+				return A2(
+					_elm_community$elm_test$Expect$true,
+					_user$project$Tests6$errorNotPolindrom(list),
+					_user$project$Palindrome$isPalindrome(list));
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_community$elm_test$Test$test,
+				'[ 2, 1 ] is not palindrome',
+				function (_p2) {
+					var _p3 = _p2;
+					var list = {
+						ctor: '::',
+						_0: 2,
+						_1: {
+							ctor: '::',
+							_0: 1,
+							_1: {ctor: '[]'}
+						}
+					};
+					return A2(
+						_elm_community$elm_test$Expect$false,
+						_user$project$Tests6$errorPolindrom(list),
+						_user$project$Palindrome$isPalindrome(list));
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_community$elm_test$Test$test,
+					'[ 1 ]  is palindrome',
+					function (_p4) {
+						var _p5 = _p4;
+						var list = {
+							ctor: '::',
+							_0: 1,
+							_1: {ctor: '[]'}
+						};
+						return A2(
+							_elm_community$elm_test$Expect$true,
+							_user$project$Tests6$errorNotPolindrom(list),
+							_user$project$Palindrome$isPalindrome(list));
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_community$elm_test$Test$test,
+						'[] is palindrome',
+						function (_p6) {
+							var _p7 = _p6;
+							var list = {ctor: '[]'};
+							return A2(
+								_elm_community$elm_test$Expect$true,
+								_user$project$Tests6$errorNotPolindrom(list),
+								_user$project$Palindrome$isPalindrome(list));
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_community$elm_test$Test$test,
+							' [ aa, bb, aa ] is palindrome',
+							function (_p8) {
+								var _p9 = _p8;
+								var list = {
+									ctor: '::',
+									_0: 'aa',
+									_1: {
+										ctor: '::',
+										_0: 'bb',
+										_1: {
+											ctor: '::',
+											_0: 'aa',
+											_1: {ctor: '[]'}
+										}
+									}
+								};
+								return A2(
+									_elm_community$elm_test$Expect$true,
+									_user$project$Tests6$errorNotPolindrom(list),
+									_user$project$Palindrome$isPalindrome(list));
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_community$elm_test$Test$test,
+								' [ aab, b, aa ] is palindrome',
+								function (_p10) {
+									var _p11 = _p10;
+									var list = {
+										ctor: '::',
+										_0: 'aab',
+										_1: {
+											ctor: '::',
+											_0: 'b',
+											_1: {
+												ctor: '::',
+												_0: 'aa',
+												_1: {ctor: '[]'}
+											}
+										}
+									};
+									return A2(
+										_elm_community$elm_test$Expect$false,
+										_user$project$Tests6$errorPolindrom(list),
+										_user$project$Palindrome$isPalindrome(list));
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	});
