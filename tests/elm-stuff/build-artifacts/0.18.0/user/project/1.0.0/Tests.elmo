@@ -2,5 +2,9 @@ var _user$project$Tests$all = _elm_community$elm_test$Test$concat(
 	{
 		ctor: '::',
 		_0: _user$project$Tests6$all,
-		_1: {ctor: '[]'}
+		_1: {
+			ctor: '::',
+			_0: _user$project$Tests7$all,
+			_1: {ctor: '[]'}
+		}
 	});

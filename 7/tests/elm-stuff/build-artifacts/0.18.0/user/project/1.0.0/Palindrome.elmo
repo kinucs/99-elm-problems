@@ -1,0 +1,5 @@
+var _user$project$Palindrome$isPalindrome = function (list) {
+	return _elm_lang$core$Native_Utils.eq(
+		_elm_lang$core$List$reverse(list),
+		list);
+};
