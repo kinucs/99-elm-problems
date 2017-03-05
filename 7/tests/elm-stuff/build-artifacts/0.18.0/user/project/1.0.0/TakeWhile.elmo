@@ -1,0 +1,18 @@
+var _user$project$TakeWhile$takeWhile = F2(
+	function (predicate, list) {
+		var first = _elm_lang$core$List$head(list);
+		var _p0 = first;
+		if (_p0.ctor === 'Just') {
+			var _p1 = _p0._0;
+			return predicate(_p1) ? {
+				ctor: '::',
+				_0: _p1,
+				_1: A2(
+					_user$project$TakeWhile$takeWhile,
+					predicate,
+					A2(_elm_lang$core$List$drop, 1, list))
+			} : {ctor: '[]'};
+		} else {
+			return {ctor: '[]'};
+		}
+	});

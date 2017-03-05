@@ -1,77 +1,34 @@
+var _user$project$Tests7$isOdd = function (x) {
+	return !_elm_lang$core$Native_Utils.eq(
+		A2(_elm_lang$core$Basics_ops['%'], x, 2),
+		0);
+};
+var _user$project$Tests7$isEven = function (x) {
+	return _elm_lang$core$Native_Utils.eq(
+		A2(_elm_lang$core$Basics_ops['%'], x, 2),
+		0);
+};
 var _user$project$Tests7$all = A2(
 	_elm_community$elm_test$Test$describe,
 	'Problem 7 tests',
 	{
 		ctor: '::',
 		_0: A2(
-			_elm_community$elm_test$Test$test,
-			'flatten (SubList [ Elem 1, Elem 2 ]) == [ 1, 2 ]',
-			function (_p0) {
-				var _p1 = _p0;
-				var expected = {
-					ctor: '::',
-					_0: 1,
-					_1: {
-						ctor: '::',
-						_0: 2,
-						_1: {ctor: '[]'}
-					}
-				};
-				var actual = _user$project$FlattenNestedList$flatten(
-					_user$project$FlattenNestedList$SubList(
-						{
-							ctor: '::',
-							_0: _user$project$FlattenNestedList$Elem(1),
-							_1: {
-								ctor: '::',
-								_0: _user$project$FlattenNestedList$Elem(2),
-								_1: {ctor: '[]'}
-							}
-						}));
-				return A2(_elm_community$elm_test$Expect$equal, actual, expected);
-			}),
-		_1: {
-			ctor: '::',
-			_0: A2(
-				_elm_community$elm_test$Test$test,
-				'flatten (SubList [ Elem 1, Elem 2 ]) == [ 1, 2 ]',
-				function (_p2) {
-					var _p3 = _p2;
-					var expected = {
-						ctor: '::',
-						_0: 1,
-						_1: {
-							ctor: '::',
-							_0: 2,
-							_1: {ctor: '[]'}
-						}
-					};
-					var actual = _user$project$FlattenNestedList$flatten(
-						_user$project$FlattenNestedList$SubList(
-							{
-								ctor: '::',
-								_0: _user$project$FlattenNestedList$Elem(1),
-								_1: {
-									ctor: '::',
-									_0: _user$project$FlattenNestedList$Elem(2),
-									_1: {ctor: '[]'}
-								}
-							}));
-					return A2(_elm_community$elm_test$Expect$equal, actual, expected);
-				}),
-			_1: {
+			_elm_community$elm_test$Test$describe,
+			'flatten tests',
+			{
 				ctor: '::',
 				_0: A2(
 					_elm_community$elm_test$Test$test,
-					'flatten (SubList [ Elem \'a\', Elem \'b\' ]) == [ \'a\', \'b\' ]',
-					function (_p4) {
-						var _p5 = _p4;
+					'flatten (SubList [ Elem 1, Elem 2 ]) == [ 1, 2 ]',
+					function (_p0) {
+						var _p1 = _p0;
 						var expected = {
 							ctor: '::',
-							_0: 'a',
+							_0: 1,
 							_1: {
 								ctor: '::',
-								_0: 'b',
+								_0: 2,
 								_1: {ctor: '[]'}
 							}
 						};
@@ -79,10 +36,10 @@ var _user$project$Tests7$all = A2(
 							_user$project$FlattenNestedList$SubList(
 								{
 									ctor: '::',
-									_0: _user$project$FlattenNestedList$Elem('a'),
+									_0: _user$project$FlattenNestedList$Elem(1),
 									_1: {
 										ctor: '::',
-										_0: _user$project$FlattenNestedList$Elem('b'),
+										_0: _user$project$FlattenNestedList$Elem(2),
 										_1: {ctor: '[]'}
 									}
 								}));
@@ -92,155 +49,475 @@ var _user$project$Tests7$all = A2(
 					ctor: '::',
 					_0: A2(
 						_elm_community$elm_test$Test$test,
-						'flatten (SubList [ ]) == [ ]',
-						function (_p6) {
-							var _p7 = _p6;
-							var expected = {ctor: '[]'};
+						'flatten (SubList [ Elem 1, Elem 2 ]) == [ 1, 2 ]',
+						function (_p2) {
+							var _p3 = _p2;
+							var expected = {
+								ctor: '::',
+								_0: 1,
+								_1: {
+									ctor: '::',
+									_0: 2,
+									_1: {ctor: '[]'}
+								}
+							};
 							var actual = _user$project$FlattenNestedList$flatten(
 								_user$project$FlattenNestedList$SubList(
-									{ctor: '[]'}));
+									{
+										ctor: '::',
+										_0: _user$project$FlattenNestedList$Elem(1),
+										_1: {
+											ctor: '::',
+											_0: _user$project$FlattenNestedList$Elem(2),
+											_1: {ctor: '[]'}
+										}
+									}));
 							return A2(_elm_community$elm_test$Expect$equal, actual, expected);
 						}),
 					_1: {
 						ctor: '::',
 						_0: A2(
 							_elm_community$elm_test$Test$test,
-							'flatten (SubList [ ]) == [ ]',
-							function (_p8) {
-								var _p9 = _p8;
-								var expected = A2(_elm_lang$core$List$range, 1, 9);
-								var numbers_1_9 = _user$project$FlattenNestedList$SubList(
-									{
+							'flatten (SubList [ Elem \'a\', Elem \'b\' ]) == [ \'a\', \'b\' ]',
+							function (_p4) {
+								var _p5 = _p4;
+								var expected = {
+									ctor: '::',
+									_0: 'a',
+									_1: {
 										ctor: '::',
-										_0: _user$project$FlattenNestedList$Elem(1),
-										_1: {
+										_0: 'b',
+										_1: {ctor: '[]'}
+									}
+								};
+								var actual = _user$project$FlattenNestedList$flatten(
+									_user$project$FlattenNestedList$SubList(
+										{
 											ctor: '::',
-											_0: _user$project$FlattenNestedList$SubList(
-												{
-													ctor: '::',
-													_0: _user$project$FlattenNestedList$SubList(
-														{
-															ctor: '::',
-															_0: _user$project$FlattenNestedList$Elem(2),
-															_1: {
-																ctor: '::',
-																_0: _user$project$FlattenNestedList$SubList(
-																	{
-																		ctor: '::',
-																		_0: _user$project$FlattenNestedList$Elem(3),
-																		_1: {
-																			ctor: '::',
-																			_0: _user$project$FlattenNestedList$Elem(4),
-																			_1: {ctor: '[]'}
-																		}
-																	}),
-																_1: {ctor: '[]'}
-															}
-														}),
-													_1: {
-														ctor: '::',
-														_0: _user$project$FlattenNestedList$Elem(5),
-														_1: {ctor: '[]'}
-													}
-												}),
+											_0: _user$project$FlattenNestedList$Elem('a'),
 											_1: {
 												ctor: '::',
-												_0: _user$project$FlattenNestedList$Elem(6),
+												_0: _user$project$FlattenNestedList$Elem('b'),
+												_1: {ctor: '[]'}
+											}
+										}));
+								return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_community$elm_test$Test$test,
+								'flatten (SubList [ ]) == [ ]',
+								function (_p6) {
+									var _p7 = _p6;
+									var expected = {ctor: '[]'};
+									var actual = _user$project$FlattenNestedList$flatten(
+										_user$project$FlattenNestedList$SubList(
+											{ctor: '[]'}));
+									return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_community$elm_test$Test$test,
+									'flatten (SubList [ ]) == [ ]',
+									function (_p8) {
+										var _p9 = _p8;
+										var expected = A2(_elm_lang$core$List$range, 1, 9);
+										var numbers_1_9 = _user$project$FlattenNestedList$SubList(
+											{
+												ctor: '::',
+												_0: _user$project$FlattenNestedList$Elem(1),
 												_1: {
 													ctor: '::',
 													_0: _user$project$FlattenNestedList$SubList(
 														{
 															ctor: '::',
-															_0: _user$project$FlattenNestedList$Elem(7),
+															_0: _user$project$FlattenNestedList$SubList(
+																{
+																	ctor: '::',
+																	_0: _user$project$FlattenNestedList$Elem(2),
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$FlattenNestedList$SubList(
+																			{
+																				ctor: '::',
+																				_0: _user$project$FlattenNestedList$Elem(3),
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$FlattenNestedList$Elem(4),
+																					_1: {ctor: '[]'}
+																				}
+																			}),
+																		_1: {ctor: '[]'}
+																	}
+																}),
 															_1: {
 																ctor: '::',
-																_0: _user$project$FlattenNestedList$Elem(8),
-																_1: {
-																	ctor: '::',
-																	_0: _user$project$FlattenNestedList$Elem(9),
-																	_1: {ctor: '[]'}
-																}
+																_0: _user$project$FlattenNestedList$Elem(5),
+																_1: {ctor: '[]'}
 															}
 														}),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: _user$project$FlattenNestedList$Elem(6),
+														_1: {
+															ctor: '::',
+															_0: _user$project$FlattenNestedList$SubList(
+																{
+																	ctor: '::',
+																	_0: _user$project$FlattenNestedList$Elem(7),
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$FlattenNestedList$Elem(8),
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$FlattenNestedList$Elem(9),
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}),
+															_1: {ctor: '[]'}
+														}
+													}
 												}
-											}
-										}
-									});
-								var actual = _user$project$FlattenNestedList$flatten(numbers_1_9);
-								return A2(_elm_community$elm_test$Expect$equal, actual, expected);
-							}),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		}
-	});
-var _user$project$Tests7$nl1 = _user$project$FlattenNestedList$SubList(
-	{
-		ctor: '::',
-		_0: _user$project$FlattenNestedList$Elem(1),
-		_1: {
-			ctor: '::',
-			_0: _user$project$FlattenNestedList$SubList(
-				{
-					ctor: '::',
-					_0: _user$project$FlattenNestedList$SubList(
-						{
-							ctor: '::',
-							_0: _user$project$FlattenNestedList$Elem(2),
-							_1: {
-								ctor: '::',
-								_0: _user$project$FlattenNestedList$SubList(
-									{
-										ctor: '::',
-										_0: _user$project$FlattenNestedList$Elem(3),
-										_1: {
-											ctor: '::',
-											_0: _user$project$FlattenNestedList$Elem(4),
-											_1: {ctor: '[]'}
-										}
+											});
+										var actual = _user$project$FlattenNestedList$flatten(numbers_1_9);
+										return A2(_elm_community$elm_test$Expect$equal, actual, expected);
 									}),
 								_1: {ctor: '[]'}
 							}
+						}
+					}
+				}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_community$elm_test$Test$describe,
+				'drop while tests',
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_community$elm_test$Test$test,
+						'dropWhile isOdd [ 1, 2, 1 ]',
+						function (_p10) {
+							var _p11 = _p10;
+							var expected = {
+								ctor: '::',
+								_0: 2,
+								_1: {
+									ctor: '::',
+									_0: 1,
+									_1: {ctor: '[]'}
+								}
+							};
+							var actual = A2(
+								_user$project$DropWhile$dropWhile,
+								_user$project$Tests7$isOdd,
+								{
+									ctor: '::',
+									_0: 1,
+									_1: {
+										ctor: '::',
+										_0: 2,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										}
+									}
+								});
+							return A2(_elm_community$elm_test$Expect$equal, actual, expected);
 						}),
 					_1: {
 						ctor: '::',
-						_0: _user$project$FlattenNestedList$Elem(5),
-						_1: {ctor: '[]'}
+						_0: A2(
+							_elm_community$elm_test$Test$test,
+							'dropWhile isEven [1, 2, 1]',
+							function (_p12) {
+								var _p13 = _p12;
+								var expected = {
+									ctor: '::',
+									_0: 1,
+									_1: {
+										ctor: '::',
+										_0: 2,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										}
+									}
+								};
+								var actual = A2(
+									_user$project$DropWhile$dropWhile,
+									_user$project$Tests7$isEven,
+									{
+										ctor: '::',
+										_0: 1,
+										_1: {
+											ctor: '::',
+											_0: 2,
+											_1: {
+												ctor: '::',
+												_0: 1,
+												_1: {ctor: '[]'}
+											}
+										}
+									});
+								return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_community$elm_test$Test$test,
+								'dropWhile isEven []',
+								function (_p14) {
+									var _p15 = _p14;
+									var expected = {ctor: '[]'};
+									var actual = A2(
+										_user$project$DropWhile$dropWhile,
+										_user$project$Tests7$isEven,
+										{ctor: '[]'});
+									return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_community$elm_test$Test$test,
+									'dropWhile isEven [2, 4, 100000, 1]',
+									function (_p16) {
+										var _p17 = _p16;
+										var expected = {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										};
+										var actual = A2(
+											_user$project$DropWhile$dropWhile,
+											_user$project$Tests7$isEven,
+											{
+												ctor: '::',
+												_0: 2,
+												_1: {
+													ctor: '::',
+													_0: 4,
+													_1: {
+														ctor: '::',
+														_0: 100000,
+														_1: {
+															ctor: '::',
+															_0: 1,
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											});
+										return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_community$elm_test$Test$test,
+										'dropWhile (x -> x < 5 ) (List.range 1 10)',
+										function (_p18) {
+											var _p19 = _p18;
+											var expected = {
+												ctor: '::',
+												_0: 5,
+												_1: {
+													ctor: '::',
+													_0: 6,
+													_1: {
+														ctor: '::',
+														_0: 7,
+														_1: {
+															ctor: '::',
+															_0: 8,
+															_1: {
+																ctor: '::',
+																_0: 9,
+																_1: {
+																	ctor: '::',
+																	_0: 10,
+																	_1: {ctor: '[]'}
+																}
+															}
+														}
+													}
+												}
+											};
+											var actual = A2(
+												_user$project$DropWhile$dropWhile,
+												function (x) {
+													return _elm_lang$core$Native_Utils.cmp(x, 5) < 0;
+												},
+												A2(_elm_lang$core$List$range, 1, 10));
+											return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+										}),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
 					}
 				}),
 			_1: {
 				ctor: '::',
-				_0: _user$project$FlattenNestedList$Elem(6),
-				_1: {
-					ctor: '::',
-					_0: _user$project$FlattenNestedList$SubList(
-						{
+				_0: A2(
+					_elm_community$elm_test$Test$describe,
+					'take while tests',
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_community$elm_test$Test$test,
+							'takeWhile isOdd [ 1, 2, 1 ]',
+							function (_p20) {
+								var _p21 = _p20;
+								var expected = {
+									ctor: '::',
+									_0: 1,
+									_1: {ctor: '[]'}
+								};
+								var actual = A2(
+									_user$project$TakeWhile$takeWhile,
+									_user$project$Tests7$isOdd,
+									{
+										ctor: '::',
+										_0: 1,
+										_1: {
+											ctor: '::',
+											_0: 2,
+											_1: {
+												ctor: '::',
+												_0: 1,
+												_1: {ctor: '[]'}
+											}
+										}
+									});
+								return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+							}),
+						_1: {
 							ctor: '::',
-							_0: _user$project$FlattenNestedList$Elem(7),
+							_0: A2(
+								_elm_community$elm_test$Test$test,
+								'takeWhile isEven [1, 2, 1]',
+								function (_p22) {
+									var _p23 = _p22;
+									var expected = {ctor: '[]'};
+									var actual = A2(
+										_user$project$TakeWhile$takeWhile,
+										_user$project$Tests7$isEven,
+										{
+											ctor: '::',
+											_0: 1,
+											_1: {
+												ctor: '::',
+												_0: 2,
+												_1: {
+													ctor: '::',
+													_0: 1,
+													_1: {ctor: '[]'}
+												}
+											}
+										});
+									return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+								}),
 							_1: {
 								ctor: '::',
-								_0: _user$project$FlattenNestedList$Elem(8),
+								_0: A2(
+									_elm_community$elm_test$Test$test,
+									'takeWhile isEven []',
+									function (_p24) {
+										var _p25 = _p24;
+										var expected = {ctor: '[]'};
+										var actual = A2(
+											_user$project$TakeWhile$takeWhile,
+											_user$project$Tests7$isEven,
+											{ctor: '[]'});
+										return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+									}),
 								_1: {
 									ctor: '::',
-									_0: _user$project$FlattenNestedList$Elem(9),
-									_1: {ctor: '[]'}
+									_0: A2(
+										_elm_community$elm_test$Test$test,
+										'takeWhile isEven [2, 4, 100000, 1]',
+										function (_p26) {
+											var _p27 = _p26;
+											var expected = {
+												ctor: '::',
+												_0: 2,
+												_1: {
+													ctor: '::',
+													_0: 4,
+													_1: {
+														ctor: '::',
+														_0: 100000,
+														_1: {ctor: '[]'}
+													}
+												}
+											};
+											var actual = A2(
+												_user$project$TakeWhile$takeWhile,
+												_user$project$Tests7$isEven,
+												{
+													ctor: '::',
+													_0: 2,
+													_1: {
+														ctor: '::',
+														_0: 4,
+														_1: {
+															ctor: '::',
+															_0: 100000,
+															_1: {
+																ctor: '::',
+																_0: 1,
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												});
+											return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_community$elm_test$Test$test,
+											'takeWhile (x -> x < 5 ) (List.range 1 10)',
+											function (_p28) {
+												var _p29 = _p28;
+												var expected = {
+													ctor: '::',
+													_0: 1,
+													_1: {
+														ctor: '::',
+														_0: 2,
+														_1: {
+															ctor: '::',
+															_0: 3,
+															_1: {
+																ctor: '::',
+																_0: 4,
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												};
+												var actual = A2(
+													_user$project$TakeWhile$takeWhile,
+													function (x) {
+														return _elm_lang$core$Native_Utils.cmp(x, 5) < 0;
+													},
+													A2(_elm_lang$core$List$range, 1, 10));
+												return A2(_elm_community$elm_test$Expect$equal, actual, expected);
+											}),
+										_1: {ctor: '[]'}
+									}
 								}
 							}
-						}),
-					_1: {ctor: '[]'}
-				}
+						}
+					}),
+				_1: {ctor: '[]'}
 			}
-		}
-	});
-var _user$project$Tests7$nl0 = _user$project$FlattenNestedList$SubList(
-	{
-		ctor: '::',
-		_0: _user$project$FlattenNestedList$Elem(1),
-		_1: {
-			ctor: '::',
-			_0: _user$project$FlattenNestedList$Elem(2),
-			_1: {ctor: '[]'}
 		}
 	});

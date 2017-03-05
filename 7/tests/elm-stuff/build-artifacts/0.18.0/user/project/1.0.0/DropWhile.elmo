@@ -1,0 +1,21 @@
+var _user$project$DropWhile$dropWhile = F2(
+	function (predicate, list) {
+		dropWhile:
+		while (true) {
+			var first = _elm_lang$core$List$head(list);
+			var _p0 = first;
+			if (_p0.ctor === 'Just') {
+				if (predicate(_p0._0)) {
+					var _v1 = predicate,
+						_v2 = A2(_elm_lang$core$List$drop, 1, list);
+					predicate = _v1;
+					list = _v2;
+					continue dropWhile;
+				} else {
+					return list;
+				}
+			} else {
+				return list;
+			}
+		}
+	});
