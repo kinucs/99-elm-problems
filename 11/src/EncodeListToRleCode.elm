@@ -8,32 +8,12 @@ type RleCode a
     | Single a
 
 
-toTupple : List a -> ( Int, Maybe a )
-toTupple list =
-    ( length list, head list )
-
-
 toRle : Int -> a -> RleCode a
 toRle n v =
-    case n of
-        1 ->
-            Single v
-
-        anythingElse ->
-            Run n v
-
-
-removeEmpties : List ( Int, Maybe a ) -> List (RleCode a)
-removeEmpties list =
-    case list of
-        [] ->
-            []
-
-        ( n, Nothing ) :: others ->
-            removeEmpties others
-
-        ( n, Just v ) :: others ->
-            toRle n v :: removeEmpties others
+    if n == 1 then
+        Single v
+    else
+        Run n v
 
 
 count : List a -> a -> Int
@@ -49,21 +29,15 @@ count list elem =
                 0
 
 
-pack : List a -> List (List a)
-pack list =
+rleEncode : List a -> List (RleCode a)
+rleEncode list =
     case list of
         [] ->
             []
 
         first :: others ->
             let
-                c =
+                nb =
                     count list first
             in
-                [ repeat c first ] ++ (pack (drop c list))
-
-
-rleEncode : List a -> List (RleCode a)
-rleEncode list =
-    removeEmpties <|
-        map toTupple (pack list)
+                (::) (toRle nb first) (rleEncode (drop nb list))
