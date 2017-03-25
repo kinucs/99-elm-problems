@@ -29,7 +29,7 @@ sub writeContent {
 }
 
 sub templateMainModule {
-  return 'module $module exposing (..)';
+  return "module $module exposing (..)"
 }
 
 sub templateTestElmPackageJSON { return
