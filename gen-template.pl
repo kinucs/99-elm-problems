@@ -68,8 +68,7 @@ import $module exposing (..)
 all : Test
 all =
     describe \"Problem $folder tests\"
-        [
-        ]
+        []
 ";
 }
 
@@ -83,7 +82,7 @@ import Json.Encode exposing (Value)
 
 main : TestProgram
 main =
-run emit Tests$folder.all
+    run emit Tests$folder.all
 
 
 port emit : ( String, Value ) -> Cmd msg";
