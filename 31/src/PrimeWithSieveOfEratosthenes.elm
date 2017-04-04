@@ -1,4 +1,4 @@
-module Prime exposing (..)
+module PrimeWithSieveOfEratosthenes exposing (..)
 
 import List exposing (..)
 

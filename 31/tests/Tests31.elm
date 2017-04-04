@@ -3,8 +3,7 @@ module Tests31 exposing (..)
 import Test exposing (..)
 import Expect
 import String
-import List
-import Prime exposing (..)
+import QuickPrime exposing (..)
 
 
 all : Test
@@ -21,8 +20,8 @@ all =
         , testPrime 6000 <| False
         , testPrime 7919 <| True
         , testPrime 7911 <| False
-          -- , testPrime 63247 <| True
-          -- , testPrime 63249 <| False
+        , testPrime 63247 <| True
+        , testPrime 63249 <| False
         ]
 
 
